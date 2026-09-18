@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Carlos Games</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,10 +20,15 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header {
     background: #151515;
     border-bottom: 2px solid #ff7a00;
     padding: 18px 25px;
+
     display: flex;
     align-items: center;
     gap: 18px;
@@ -37,11 +44,14 @@ header {
 .search {
     flex: 1;
     max-width: 500px;
+
     background: #222;
     border: 1px solid #333;
     color: white;
+
     padding: 12px 15px;
     border-radius: 8px;
+
     outline: none;
 }
 
@@ -51,20 +61,26 @@ header {
 
 .admin-button {
     margin-left: auto;
+
     background: #ff7a00;
     color: white;
+
     border: none;
     padding: 11px 15px;
+
     border-radius: 8px;
+
     font-weight: bold;
     cursor: pointer;
 }
 
-.admin-button:hover,
-.play:hover,
-.save-button:hover {
+.admin-button:hover {
     background: #ff8c1a;
 }
+
+/* =========================
+   GENERAL
+========================= */
 
 .container {
     max-width: 1200px;
@@ -74,8 +90,10 @@ header {
 
 .hero {
     background: #171717;
+
     border: 1px solid #292929;
     border-radius: 14px;
+
     padding: 35px;
     margin-bottom: 30px;
 }
@@ -93,18 +111,26 @@ header {
     color: #999;
 }
 
+/* =========================
+   CATEGORIES
+========================= */
+
 .categories {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+
     margin-bottom: 30px;
 }
 
 .category {
     background: #1c1c1c;
+
     border: 1px solid #333;
     color: #ccc;
+
     padding: 10px 16px;
+
     border-radius: 8px;
     cursor: pointer;
 }
@@ -116,17 +142,27 @@ header {
     color: white;
 }
 
+/* =========================
+   GAME CARDS
+========================= */
+
 .games {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(220px, 1fr));
+
     gap: 20px;
 }
 
 .game {
     background: #171717;
+
     border: 1px solid #292929;
     border-radius: 12px;
+
     overflow: hidden;
+
     transition: 0.2s;
 }
 
@@ -138,8 +174,11 @@ header {
 .game-image {
     width: 100%;
     height: 140px;
+
     object-fit: cover;
+
     display: block;
+
     background: #111;
 }
 
@@ -153,23 +192,101 @@ header {
 
 .game-category {
     color: #999;
+
     margin-bottom: 15px;
+
     font-size: 14px;
 }
 
 .play {
     display: block;
     width: 100%;
+
     background: #ff7a00;
+
     color: white;
+
     text-align: center;
     text-decoration: none;
+
     padding: 11px;
+
     border-radius: 7px;
+
     font-weight: bold;
 }
 
-/* ADMIN */
+.play:hover {
+    background: #ff8c1a;
+}
+
+.empty {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 60px;
+
+    color: #777;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+#loginScreen {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #0b0b0b;
+
+    z-index: 999;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 350px;
+    max-width: 90%;
+
+    background: #171717;
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+.login-box h1 {
+    color: #ff7a00;
+
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: #999;
+
+    margin-bottom: 20px;
+}
+
+.error {
+    color: #ff4d4d;
+
+    margin-top: 12px;
+
+    display: none;
+}
+
+/* =========================
+   ADMIN
+========================= */
 
 #adminPage {
     display: none;
@@ -177,25 +294,41 @@ header {
 
 .admin-header {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     margin-bottom: 25px;
 }
 
 .back-button {
     background: #222;
+
     color: white;
+
     border: 1px solid #333;
+
     padding: 10px 15px;
+
     border-radius: 7px;
+
     cursor: pointer;
+}
+
+.back-button:hover {
+    background: #333;
 }
 
 .panel {
     background: #171717;
+
     border: 1px solid #292929;
+
     border-radius: 12px;
+
     padding: 25px;
+
     margin-bottom: 20px;
 }
 
@@ -206,39 +339,71 @@ header {
 input,
 select {
     width: 100%;
+
     background: #222;
+
     border: 1px solid #333;
+
     color: white;
+
     padding: 12px;
+
     border-radius: 7px;
+
     margin-bottom: 12px;
+
     outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #ff7a00;
 }
 
 .save-button {
     background: #ff7a00;
+
     color: white;
+
     border: none;
+
     padding: 12px 20px;
+
     border-radius: 7px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
+.save-button:hover {
+    background: #ff8c1a;
+}
+
+/* ADMIN GAME */
+
 .admin-game {
     background: #222;
+
     border-radius: 10px;
+
     padding: 15px;
+
     margin-bottom: 12px;
+
     display: flex;
+
     align-items: center;
+
     gap: 15px;
 }
 
 .admin-game img {
     width: 90px;
     height: 60px;
+
     object-fit: cover;
+
     border-radius: 7px;
 }
 
@@ -248,73 +413,49 @@ select {
 
 .admin-info p {
     color: #999;
+
     margin-top: 5px;
 }
 
 .edit-button {
     background: #555;
+
     color: white;
+
     border: none;
+
     padding: 9px 13px;
+
     border-radius: 7px;
+
     cursor: pointer;
+}
+
+.edit-button:hover {
+    background: #666;
 }
 
 .delete-button {
     background: #c0392b;
+
     color: white;
+
     border: none;
+
     padding: 9px 13px;
+
     border-radius: 7px;
+
     cursor: pointer;
 }
 
-.empty {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 60px;
-    color: #777;
+.delete-button:hover {
+    background: #e74c3c;
 }
 
-/* LOGIN */
-
-#loginScreen {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: #0b0b0b;
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
-}
-
-.login-box {
-    width: 350px;
-    max-width: 90%;
-    background: #171717;
-    border: 1px solid #292929;
-    border-radius: 14px;
-    padding: 30px;
-    text-align: center;
-}
-
-.login-box h1 {
-    color: #ff7a00;
-    margin-bottom: 10px;
-}
-
-.login-box p {
-    color: #999;
-    margin-bottom: 20px;
-}
-
-.error {
-    color: #ff4d4d;
-    margin-top: 12px;
-    display: none;
-}
-
-/* GAME PLAYER */
+/* =========================
+   GAME PLAYER
+========================= */
 
 #gamePage {
     display: none;
@@ -322,40 +463,110 @@ select {
 
 .game-player-header {
     display: flex;
+
     align-items: center;
+
     gap: 15px;
+
     margin-bottom: 20px;
+}
+
+.game-player-header h1 {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
 }
 
 .game-frame {
     width: 100%;
+
     height: 70vh;
+
     min-height: 500px;
+
     border: 1px solid #292929;
+
     border-radius: 12px;
+
     overflow: hidden;
+
     background: #111;
 }
 
 .game-frame iframe {
     width: 100%;
     height: 100%;
+
     border: none;
+
+    display: block;
 }
+
+/* =========================
+   GAME CONTROLS
+========================= */
+
+.game-controls {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+    flex-wrap: wrap;
+}
+
+.game-control {
+    background: #222;
+
+    color: white;
+
+    border: 1px solid #333;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.game-control:hover {
+    background: #ff7a00;
+
+    border-color: #ff7a00;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
+
     color: #666;
+
     padding: 40px;
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 700px) {
+
     header {
         flex-wrap: wrap;
     }
 
     .logo {
         width: 100%;
+
         text-align: center;
     }
 
@@ -374,16 +585,27 @@ footer {
     .admin-game {
         flex-wrap: wrap;
     }
+
+    .game-player-header {
+        flex-wrap: wrap;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- MAIN HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
-    <div class="logo">🎮 Carlos Games</div>
+
+    <div class="logo">
+        🎮 Carlos Games
+    </div>
 
     <input
         id="search"
@@ -398,30 +620,39 @@ footer {
     >
         ⚙️ Admin Panel
     </button>
+
 </header>
 
 
-<!-- HOME -->
+<!-- =========================
+     HOME PAGE
+========================= -->
 
 <main id="homePage">
 
     <div class="container">
 
         <section class="hero">
+
             <h1>
                 Welcome to
-                <span class="orange">Carlos Games</span>
+                <span class="orange">
+                    Carlos Games
+                </span>
             </h1>
 
             <p>
                 Pick a game and start playing.
             </p>
+
         </section>
+
 
         <div
             class="categories"
             id="categories"
         ></div>
+
 
         <div
             class="games"
@@ -433,7 +664,9 @@ footer {
 </main>
 
 
-<!-- GAME PLAYER -->
+<!-- =========================
+     GAME PAGE
+========================= -->
 
 <main id="gamePage">
 
@@ -454,7 +687,11 @@ footer {
 
         </div>
 
-        <div class="game-frame">
+
+        <div
+            class="game-frame"
+            id="gameFrameContainer"
+        >
 
             <iframe
                 id="gameFrame"
@@ -464,20 +701,48 @@ footer {
 
         </div>
 
+
+        <!-- GAME BUTTONS -->
+
+        <div class="game-controls">
+
+            <button
+                class="game-control"
+                onclick="fullscreenGame()"
+            >
+                ⛶ Fullscreen
+            </button>
+
+
+            <button
+                class="game-control"
+                onclick="openGameWebsite()"
+            >
+                🌐 Open Website
+            </button>
+
+        </div>
+
     </div>
 
 </main>
 
 
-<!-- ADMIN LOGIN -->
+<!-- =========================
+     LOGIN
+========================= -->
 
 <div id="loginScreen">
 
     <div class="login-box">
 
-        <h1>🔐 Admin Login</h1>
+        <h1>
+            🔐 Admin Login
+        </h1>
 
-        <p>Carlos Games</p>
+        <p>
+            Carlos Games
+        </p>
 
         <input
             id="adminPassword"
@@ -504,7 +769,9 @@ footer {
 </div>
 
 
-<!-- ADMIN PAGE -->
+<!-- =========================
+     ADMIN PAGE
+========================= -->
 
 <main id="adminPage">
 
@@ -513,11 +780,17 @@ footer {
         <div class="admin-header">
 
             <div>
-                <h1>⚙️ Admin Panel</h1>
+
+                <h1>
+                    ⚙️ Admin Panel
+                </h1>
+
                 <p style="color:#999;">
                     Manage Carlos Games
                 </p>
+
             </div>
+
 
             <button
                 class="back-button"
@@ -537,11 +810,13 @@ footer {
                 ➕ Add Game
             </h2>
 
+
             <input
                 id="gameName"
                 type="text"
                 placeholder="Game name"
             >
+
 
             <select id="gameCategory">
 
@@ -579,17 +854,20 @@ footer {
 
             </select>
 
+
             <input
                 id="gameURL"
                 type="text"
                 placeholder="Game URL"
             >
 
+
             <input
                 id="gameImage"
                 type="text"
                 placeholder="Thumbnail image URL"
             >
+
 
             <button
                 class="save-button"
@@ -598,6 +876,7 @@ footer {
             >
                 Add Game
             </button>
+
 
             <button
                 class="back-button"
@@ -611,11 +890,13 @@ footer {
         </div>
 
 
-        <!-- GAME MANAGEMENT -->
+        <!-- GAME LIST -->
 
         <div class="panel">
 
-            <h2>🎮 Your Games</h2>
+            <h2>
+                🎮 Your Games
+            </h2>
 
             <div id="adminGameList"></div>
 
@@ -634,7 +915,7 @@ footer {
 <script>
 
 /* =========================
-   GAME STORAGE
+   GAME DATA
 ========================= */
 
 let games =
@@ -642,9 +923,20 @@ let games =
         localStorage.getItem("carlosGames")
     ) || [];
 
+
 let selectedCategory = "All";
 
 let editingIndex = -1;
+
+let currentGameURL = "";
+
+
+/* =========================
+   ADMIN PASSWORD
+========================= */
+
+const ADMIN_PASSWORD =
+    "Ayeboysotuff67";
 
 
 /* =========================
@@ -662,12 +954,8 @@ function saveGames() {
 
 
 /* =========================
-   ADMIN LOGIN
+   LOGIN
 ========================= */
-
-const ADMIN_PASSWORD =
-    "Ayeboysotuff67";
-
 
 function openLogin() {
 
@@ -686,22 +974,32 @@ function login() {
         document.getElementById("adminPassword")
             .value;
 
+
     if (password === ADMIN_PASSWORD) {
 
         document.getElementById("loginScreen")
             .style.display = "none";
 
+
         document.getElementById("homePage")
             .style.display = "none";
+
+
+        document.getElementById("gamePage")
+            .style.display = "none";
+
 
         document.getElementById("adminPage")
             .style.display = "block";
 
+
         document.getElementById("adminPassword")
             .value = "";
 
+
         document.getElementById("loginError")
             .style.display = "none";
+
 
         displayAdminGames();
 
@@ -715,6 +1013,8 @@ function login() {
 }
 
 
+/* ENTER KEY LOGIN */
+
 document
     .getElementById("adminPassword")
     .addEventListener(
@@ -722,7 +1022,9 @@ document
         function(event) {
 
             if (event.key === "Enter") {
+
                 login();
+
             }
 
         }
@@ -738,17 +1040,20 @@ function closeAdmin() {
     document.getElementById("adminPage")
         .style.display = "none";
 
+
     document.getElementById("homePage")
         .style.display = "block";
 
+
     displayCategories();
+
     displayGames();
 
 }
 
 
 /* =========================
-   ADD / EDIT GAME
+   SAVE / ADD GAME
 ========================= */
 
 function saveGame() {
@@ -757,13 +1062,16 @@ function saveGame() {
         document.getElementById("gameName")
             .value.trim();
 
+
     const category =
         document.getElementById("gameCategory")
             .value;
 
+
     const url =
         document.getElementById("gameURL")
             .value.trim();
+
 
     const image =
         document.getElementById("gameImage")
@@ -782,10 +1090,15 @@ function saveGame() {
 
 
     const game = {
+
         name: name,
+
         category: category,
+
         url: url,
+
         image: image
+
     };
 
 
@@ -799,11 +1112,14 @@ function saveGame() {
 
         editingIndex = -1;
 
+
         document.getElementById("formTitle")
             .textContent = "➕ Add Game";
 
+
         document.getElementById("saveGameButton")
             .textContent = "Add Game";
+
 
         document.getElementById("cancelButton")
             .style.display = "none";
@@ -832,14 +1148,18 @@ function editGame(index) {
 
     const game = games[index];
 
+
     document.getElementById("gameName")
         .value = game.name;
+
 
     document.getElementById("gameCategory")
         .value = game.category;
 
+
     document.getElementById("gameURL")
         .value = game.url;
+
 
     document.getElementById("gameImage")
         .value = game.image || "";
@@ -851,16 +1171,21 @@ function editGame(index) {
     document.getElementById("formTitle")
         .textContent = "✏️ Edit Game";
 
+
     document.getElementById("saveGameButton")
         .textContent = "Save Changes";
+
 
     document.getElementById("cancelButton")
         .style.display = "inline-block";
 
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 }
@@ -876,11 +1201,14 @@ function cancelEdit() {
 
     clearForm();
 
+
     document.getElementById("formTitle")
         .textContent = "➕ Add Game";
 
+
     document.getElementById("saveGameButton")
         .textContent = "Add Game";
+
 
     document.getElementById("cancelButton")
         .style.display = "none";
@@ -895,8 +1223,11 @@ function cancelEdit() {
 function deleteGame(index) {
 
     if (!confirm("Delete this game?")) {
+
         return;
+
     }
+
 
     games.splice(index, 1);
 
@@ -920,11 +1251,14 @@ function clearForm() {
     document.getElementById("gameName")
         .value = "";
 
+
     document.getElementById("gameCategory")
         .value = "";
 
+
     document.getElementById("gameURL")
         .value = "";
+
 
     document.getElementById("gameImage")
         .value = "";
@@ -940,6 +1274,7 @@ function displayAdminGames() {
 
     const list =
         document.getElementById("adminGameList");
+
 
     list.innerHTML = "";
 
@@ -959,6 +1294,7 @@ function displayAdminGames() {
         const item =
             document.createElement("div");
 
+
         item.className = "admin-game";
 
 
@@ -970,14 +1306,16 @@ function displayAdminGames() {
         item.innerHTML = `
 
             <img
-                src="${image}"
+                src="${escapeHTML(image)}"
                 alt=""
                 onerror="this.src='https://via.placeholder.com/90x60?text=Game'"
             >
 
             <div class="admin-info">
 
-                <strong>${escapeHTML(game.name)}</strong>
+                <strong>
+                    ${escapeHTML(game.name)}
+                </strong>
 
                 <p>
                     📂 ${escapeHTML(game.category)}
@@ -1018,13 +1356,21 @@ function displayCategories() {
     const box =
         document.getElementById("categories");
 
+
     const categories = [
+
         "All",
+
         ...new Set(
+
             games
+
                 .map(game => game.category)
+
                 .filter(Boolean)
+
         )
+
     ];
 
 
@@ -1036,21 +1382,30 @@ function displayCategories() {
         const button =
             document.createElement("button");
 
+
         button.className =
             "category" +
+
             (
+
                 category === selectedCategory
+
                     ? " active"
+
                     : ""
+
             );
 
 
-        button.textContent = category;
+        button.textContent =
+            category;
 
 
         button.onclick = function() {
 
-            selectedCategory = category;
+            selectedCategory =
+                category;
+
 
             displayCategories();
 
@@ -1087,23 +1442,44 @@ function displayGames() {
     const filtered =
         games.filter(game => {
 
-            const matchesSearch =
-                game.name
-                    .toLowerCase()
-                    .includes(search) ||
 
-                game.category
-                    .toLowerCase()
-                    .includes(search);
+            const gameName =
+                String(game.name || "")
+                    .toLowerCase();
+
+
+            const gameCategory =
+                String(game.category || "")
+                    .toLowerCase();
+
+
+            const matchesSearch =
+
+                gameName.includes(search)
+
+                ||
+
+                gameCategory.includes(search);
 
 
             const matchesCategory =
-                selectedCategory === "All" ||
+
+                selectedCategory === "All"
+
+                ||
+
                 game.category === selectedCategory;
 
 
-            return matchesSearch &&
-                   matchesCategory;
+            return (
+
+                matchesSearch
+
+                &&
+
+                matchesCategory
+
+            );
 
         });
 
@@ -1114,10 +1490,19 @@ function displayGames() {
     if (filtered.length === 0) {
 
         list.innerHTML = `
+
             <div class="empty">
-                <h2>No games found</h2>
-                <p>Add games through the Admin Panel.</p>
+
+                <h2>
+                    No games found
+                </h2>
+
+                <p>
+                    Add games through the Admin Panel.
+                </p>
+
             </div>
+
         `;
 
         return;
@@ -1130,17 +1515,25 @@ function displayGames() {
         const card =
             document.createElement("article");
 
+
         card.className = "game";
 
+
+        /* IMAGE */
 
         const image =
             document.createElement("img");
 
-        image.className = "game-image";
+
+        image.className =
+            "game-image";
+
 
         image.src =
             game.image ||
+
             "https://via.placeholder.com/500x300?text=Game";
+
 
         image.alt =
             game.name;
@@ -1154,8 +1547,11 @@ function displayGames() {
         };
 
 
+        /* CONTENT */
+
         const content =
             document.createElement("div");
+
 
         content.className =
             "game-content";
@@ -1174,30 +1570,40 @@ function displayGames() {
         `;
 
 
+        /* PLAY BUTTON */
+
         const play =
             document.createElement("a");
 
-        play.className = "play";
+
+        play.className =
+            "play";
+
 
         play.href = "#";
 
-        play.textContent = "PLAY";
+
+        play.textContent =
+            "PLAY";
 
 
-        play.onclick = function(event) {
+        play.onclick =
+            function(event) {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            openGame(game);
+                openGame(game);
 
-        };
+            };
 
 
         content.appendChild(play);
 
+
         card.appendChild(image);
 
         card.appendChild(content);
+
 
         list.appendChild(card);
 
@@ -1214,15 +1620,26 @@ function openGame(game) {
 
     if (!game.url) {
 
-        alert("This game has no URL.");
+        alert(
+            "This game has no URL."
+        );
 
         return;
 
     }
 
 
+    currentGameURL =
+        game.url;
+
+
     document.getElementById("homePage")
         .style.display = "none";
+
+
+    document.getElementById("adminPage")
+        .style.display = "none";
+
 
     document.getElementById("gamePage")
         .style.display = "block";
@@ -1237,8 +1654,11 @@ function openGame(game) {
 
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 }
@@ -1253,17 +1673,94 @@ function closeGame() {
     document.getElementById("gameFrame")
         .src = "about:blank";
 
+
+    currentGameURL = "";
+
+
     document.getElementById("gamePage")
         .style.display = "none";
+
 
     document.getElementById("homePage")
         .style.display = "block";
 
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
+
+}
+
+
+/* =========================
+   FULLSCREEN
+========================= */
+
+function fullscreenGame() {
+
+    const frame =
+        document.getElementById("gameFrame");
+
+
+    const container =
+        document.getElementById("gameFrameContainer");
+
+
+    if (container.requestFullscreen) {
+
+        container.requestFullscreen();
+
+    }
+
+    else if (frame.requestFullscreen) {
+
+        frame.requestFullscreen();
+
+    }
+
+    else if (container.webkitRequestFullscreen) {
+
+        container.webkitRequestFullscreen();
+
+    }
+
+    else {
+
+        alert(
+            "Fullscreen is not supported by your browser."
+        );
+
+    }
+
+}
+
+
+/* =========================
+   OPEN ORIGINAL WEBSITE
+========================= */
+
+function openGameWebsite() {
+
+    if (!currentGameURL) {
+
+        alert(
+            "This game has no website URL."
+        );
+
+        return;
+
+    }
+
+
+    window.open(
+        currentGameURL,
+        "_blank",
+        "noopener,noreferrer"
+    );
 
 }
 
@@ -1277,7 +1774,10 @@ function escapeHTML(text) {
     const div =
         document.createElement("div");
 
-    div.textContent = text;
+
+    div.textContent =
+        String(text);
+
 
     return div.innerHTML;
 
@@ -1297,7 +1797,7 @@ document
 
 
 /* =========================
-   START
+   START WEBSITE
 ========================= */
 
 displayCategories();
